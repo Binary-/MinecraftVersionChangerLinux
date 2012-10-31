@@ -1,0 +1,64 @@
+#!/bin/bash
+#Copyright Hugh McElderry (Binary)
+#Feel free to share.
+
+
+clear
+
+select CHOICE in 1.4.2 1.3.2 1.2.5 Install_Script Instructions License
+	
+do 
+	case "$CHOICE" in 
+		
+			"1.4.2")
+			cp ~/.minecraftversionchanger/minecraft1_4_2/minecraft1_4_2.jar ~/.minecraftversionchanger/other
+			mv -b ~/.minecraftversionchanger/other/minecraft1_4_2.jar ~/.minecraft/bin/minecraft.jar
+				echo "Process complete"				
+				;;
+
+
+                 	"1.3.2")
+			cp ~/.minecraftversionchanger/minecraft1_3_2/minecraft1_3_2.jar ~/.minecraftversionchanger/other
+			mv -b ~/.minecraftversionchanger/other/minecraft1_3_2.jar ~/.minecraft/bin/minecraft.jar
+			echo "Process complete"
+				;;
+			
+			"1.2.5")
+			cp ~/.minecraftversionchanger/minecraft1_2_5/minecraft1_2_5.jar ~/.minecraftversionchanger/other
+			mv -b ~/.minecraftversionchanger/other/minecraft1_2_5.jar ~/.minecraft/bin/minecraft.jar
+			echo "Process complete"
+				;;
+
+			"Install_Script")
+			echo "Moving some files"
+			mkdir ~/.minecraftversionchanger/
+			mkdir ~/.minecraftversionchanger/	
+			mkdir ~/.minecraftversionchanger/minecraft1_2_5/
+			mkdir ~/.minecraftversionchanger/minecraft1_3_2/
+			mkdir ~/.minecraftversionchanger/minecraft1_4_2/
+			mkdir ~/.minecraftversionchanger/other
+			#This line fetches the jars.			
+			wget  http://assets.minecraft.net/1_2_5/minecraft.jar -O ~/.minecraftversionchanger/minecraft1_2_5/minecraft1_2_5.jar
+			wget  http://assets.minecraft.net/1_3_2/minecraft.jar -O ~/.minecraftversionchanger/minecraft1_3_2/minecraft1_3_2.jar
+			wget  http://199.91.154.7/frkrx0ijx78g/njrbd4duto6u5f5/minecraft.jar -O ~/.minecraftversionchanger/minecraft1_4_2/minecraft1_4_2.jar
+			echo "Thanks for installing!"
+			echo "If you have any questions please email me at BinaryTheAnon@gmail.com"
+			;;
+			"Instructions")
+				echo "To use this script you must first choose the install button."
+				echo "This will grab all the nessesary jars you will need and setup some directories you'll need."
+				echo "Then simply select your choice from the list and it will swap out jars for you."
+				echo "To modify any jars perminatly you must modify the jars located in '~/.minecraftversionchanger/'"
+					;;
+			"License")
+				echo "Copyright (C)  2012  Hugh McElderry.
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled GNU
+    Free Documentation License."
+			;;
+	esac
+done
+
